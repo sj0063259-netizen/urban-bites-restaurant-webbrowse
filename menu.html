@@ -333,7 +333,9 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     font-size: 20px;
     font-weight: bold;
 }
-    .nav-links {
+
+/* Links */
+.nav-links {
     display: flex;
     gap: 25px;
 }
@@ -342,7 +344,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 6px;
     transition: 0.3s;
 }
@@ -352,12 +354,36 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     color: #1f2937;
 }
 
-/* Hamburger button */
+/* Toggle button */
 .menu-toggle {
     display: none;
     font-size: 26px;
     color: white;
     cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1f2937;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
 }
     /* ===== Tablet ===== */
 @media (max-width: 992px) {
@@ -443,42 +469,18 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         width: 100%;
     }
 }
-@media (max-width: 768px){
 
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #1f2937;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 15px;
-        border-radius: 0 0 0 10px;
-    }
-
-    .nav-links a {
-        padding: 10px;
-        text-align: left;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-}
 </style>
 <body>
      <nav>
     <div class="logo">Urban Bites</div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
 
     <div class="nav-links" id="navLinks">
-                <a href="#Home">Home</a>
+        <a href="#Home">Home</a>
                 <a href="#About">About</a>
                 <a href="#Fast-Food">Fast-Food</a>
                 <a href="#Main-Course">Main-Course</a>
@@ -726,5 +728,6 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("show");
 }
+</script>
 </body>
 </html>
