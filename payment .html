@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment - Urban Bites</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+   display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#f3f4f6;
+}
+
+
+.container{
+    max-width:500px;
+    margin:60px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h1{
+    color:#1f2937;
+}
+
+.price{
+    color:#b91c1c;
+    font-size:20px;
+    margin:10px 0;
+}
+
+.qty-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.qty-btn{
+    background:#b91c1c;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.total{
+    font-size:22px;
+    margin:15px 0;
+    color:#111827;
+    font-weight:bold;
+}
+
+.qr img{
+    width:200px;
+    margin:20px 0;
+}
+
+button.pay{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button.pay:hover{
+    background:#15803d;
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    width:300px;
+}
+
+.popup-content h2{
+    color:#16a34a;
+}
+
+.close{
+    margin-top:15px;
+    background:#b91c1c;
+    color:white;
+    border:none;
+    padding:8px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+.payment-card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    text-align:center;
+    width:350px;
+}
+.total{
+    font-size:22px;
+    font-weight:bold;
+    color:#b91c1c;
+    margin:15px 0;
+}
+.paid-btn{
+    background:#16a34a;
+    margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="itemName">Food Item</h1>
+
+<div class="price">Price: ₹<span id="price">0</span></div>
+
+<div class="qty-box">
+<button class="qty-btn" onclick="changeQty(-1)">−</button>
+<span id="qty">1</span>
+<button class="qty-btn" onclick="changeQty(1)">+</button>
+</div>
+
+<div class="total">
+Total: ₹<span id="total">0</span>
+</div>
+
+<div class="qr">
+<p>Scan & Pay</p>
+<img src="qr.jpeg" alt="QR Code">
+</div>
+
+<button class="pay" onclick="showPopup()">I Have Paid</button>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+<div class="popup-content">
+<h2>✅ Payment Successful</h2>
+<p>Your order has been placed!</p>
+<button class="close" onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script>
+
+// Get data from URL
+const params = new URLSearchParams(window.location.search);
+let item = params.get("item") || "Food Item";
+let price = parseInt(params.get("price")) || 0;
+
+let qty = 1;
+
+document.getElementById("itemName").innerText = item;
+document.getElementById("price").innerText = price;
+
+function updateTotal(){
+    document.getElementById("total").innerText = price * qty;
+}
+
+function changeQty(amount){
+    qty += amount;
+    if(qty < 1) qty = 1;
+    document.getElementById("qty").innerText = qty;
+    updateTotal();
+}
+
+updateTotal();
+
+function showPopup(){
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

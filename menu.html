@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANT MENU</title>
+</head>
+<style>
+     .cafe-container{
+background-color: #fff7ed;
+border-radius: 4px;
+display: flex;
+flex-wrap: wrap;
+  justify-content: space-between;
+align-items: center;
+padding: 40px;
+min-height: 70vh;
+ transition: transform 0.3s ease;
+}
+    .cafe{
+        color: #1f2937;
+        box-sizing: initial;
+        text-align: left;
+        text-decoration: #0f3d2e;
+        gap:10px;
+    }
+    .cafe img{
+         width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .cafe h1{
+        color: #1f2937;
+    }
+    .cafe h2{
+        color: #b91c1c ;
+    }
+    .ingredient{
+        color: #6b7280;
+        scrollbar-darkshadow-color: #e5e7eb;
+    }
+     button{
+        background-color:#b91c1c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #991b1b;
+    }
+    .section-light{
+        background:#fff7ed;
+    padding:60px 20px;
+    }
+    .section-dark{
+        background-color: #f3f4f6;
+        padding:60px 20px;
+    }
+    .hero-container{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20px;
+    }
+    .hero-text{
+        text-align: center;
+        flex: 1;
+        min-height: 280px;
+    }
+    .hero-text h2{
+font-size: 32px;
+color: #1f2937;
+margin-bottom: 20px;
+    }
+    .hero-text p{
+        font-size: 16px;
+        line-height: 1.7;
+        color: #465563;
+    }
+    .hero-image{
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+.hero-image img{
+width: 100%;
+max-width: 420px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+ .menu-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+.img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;}
+    .price{
+        color: #b91c1c;
+    }
+    .paragraph-container{
+        line-height: 1.6;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .paragraph-container p{
+        line-height: 0.2;
+        margin-top: 10px;
+        color: #6b7280;
+        max-width: 1100px;
+    margin: auto;
+    }
+    .menu-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.menu-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}   
+.Fast-food{
+    text-align: center;
+}
+.Fast-food h2{
+      color: #1f2937;
+      font-size: 24px;
+}
+.Fast-food h3{
+    color: #6b7280;
+    font-size: 18px;
+}
+ .Course-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+.pic{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;}
+     .course-item {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.course-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);}
+    .full{
+        text-align: center;
+    }
+    .full h2{color: #1f2937;
+    font-size: 24px;
+    }
+    .full h3{
+        color: #6b7280;
+        font-size: 18px;
+    }
+    .Desert-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+.npr{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;}
+     .Desert-item {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.Desert-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.Desert-item:hover {
+    transform: translateY(-5px);}
+    .half{
+        text-align: center;
+    }
+    .half h2{
+        color: #1f2937;
+        font-size: 24px;
+    }
+    .half h3{
+        color: #6b7280;
+        font-size: 18px;
+    }
+    .connect-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+    .connect-item{
+         background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+    }
+    .connect-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.connect-item:hover {
+    transform: translateY(-5px);}
+    .charm{ width: 100%;
+    height: 250px;
+    object-fit: cover;}
+    .trick{
+        text-align:center;
+    }
+    .trick h2{
+        color: #0f172a;
+        font-size: 24px;
+    }
+    .trick h3{
+        color: #6b7280;
+        font-size: 20px;
+    }
+.last-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+}
+.last{padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    line-height: 1.6;
+}
+.last a{
+    display: block;
+    color: #e5e7eb;
+    text-decoration: none;
+    margin: 8px 0;
+}
+.last a:hover{
+    color:#f59e0b}
+    .section-gray{
+    background-color: #0f172a;
+    color: #e5e7eb;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+.cold-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.cold-item{ background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;}
+    .cold-item p{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+.cold-item:hover {
+    transform: translateY(-5px);}
+    .cute{ width: 100%;
+    height: 250px;
+    object-fit: cover;}
+    .three{
+        text-align:center;
+    }
+    .three h2{
+        color: #0f172a;
+        font-size: 24px;
+    }
+    .three h3{
+        color: #6b7280;
+        font-size: 20px;
+    }
+    nav {
+    background-color: #1f2937;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+    .nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f59e0b;
+    color: #1f2937;
+}
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+    /* ===== Tablet ===== */
+@media (max-width: 992px) {
+
+    .cafe-container,
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-container,
+    .Course-container,
+    .Desert-container,
+    .cold-container,
+    .connect-container,
+    .last-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+
+    .menu-container,
+    .Course-container,
+    .Desert-container,
+    .cold-container,
+    .connect-container,
+    .last-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cafe-container {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .cafe img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .menu-item,
+    .course-item,
+    .Desert-item,
+    .cold-item {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .img,
+    .pic,
+    .npr,
+    .cute,
+    .charm {
+        height: 200px;
+    }
+    nav a{
+        width: 100%;
+    }
+}
+@media (max-width: 768px){
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1f2937;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 15px;
+        border-radius: 0 0 0 10px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+</style>
+<body>
+     <nav>
+    <div class="logo">Urban Bites</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Fast-Food">Fast-Food</a>
+                <a href="#Main-Course">Main-Course</a>
+                <a href="#Beverages">Beverages</a>
+                <a href="#Desserts">Desserts</a>
+                <a href="#Contact">Contact</a>
+    </div>
+</nav>
+    <section id="logo">
+        <div class="cafe-container">
+<section class="cafe">
+    <h1 id="Home"> Urban Bites Menu</h1>
+    <h2 class="delicious">Delicious Food, Delivered Fresh</h2>
+    <p class="Flavour">Explore our delicios range of dish prepared with fresh ingredients</p>
+    <p class="ingredient"><b>Fresh Ingredients • Expert Chefs • Fast Service</b></p>
+    <a href="index.html"target="_blank"><button>Back to Home</button></a>
+    <a href="table.html"target="_blank"><button>Book Table</button></a>
+        </section>
+        <section class="cafe">
+            <img src="Rlogo.jpeg"alt="logo of Urban Bites">
+    </section>
+    </div>
+    </section>
+    <section class="section-dark">
+<div class="hero-container">
+<div class="hero-text">
+    <h2 id="About">About</h2>
+<p><i>Discover a variety of delicious dishes prepared with fresh ingredients and authentic flavors. From quick bites to full-course meals, Urban Bites offers something for everyone.</i></p>
+</div>
+<div class="hero-image">
+    <img class="img" src="https://www.shutterstock.com/image-photo/closeup-hand-pulling-hot-pizza-260nw-2627517817.jpg" alt="image of pizza">
+</div>
+</section>
+<section class="section-light">
+    <div class="Fast-food">
+        <h2 id="Fast-Food">Fast Food</h2>
+        <h3><i>Crispy,cheesy,and delicious snacks made to satisfy your cravings instantly.</i></h3>
+    </div>
+    <div class="menu-container">
+        <div class="menu-item">
+            <img class="img" src="https://www.shutterstock.com/image-photo/closeup-hand-pulling-hot-pizza-260nw-2627517817.jpg" alt="image of pizza">
+            <h3>PIZZA</h3>
+            <p class="price">RS.399</p>
+            <a href="payment .html?item=Pizza&price=399"target="_blank"><button>Place Order</button></a>
+        </div> 
+        <div class="menu-item">
+            <img class="img" src="https://blog.swiggy.com/wp-content/uploads/2025/01/Image-9_-meat-burger-1024x538.png" alt="IMAGE OF BURGER">
+            <h3>BURGER</h3>
+            <p class="price">RS.199</p>
+            <a href="payment .html?item=Burger&price=199"target="_blank"><button>Place Order</button></a>
+        </div>
+ <div class="menu-item">
+            <img class="img" src="https://www.allrecipes.com/thmb/a4SMZFrhzyTfJZx4YLiqnntL9T4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/50223-homemade-crispy-seasoned-french-fries-VAT-Beauty-2x1-ca56fb55e12046bd94a3a26a9e2ca4a8.jpg" alt="french fries">
+            <h3>FRENCH FRIES</h3>
+            <p class="price">RS.259</p>
+            <a href="payment .html?item=FRENCH-FRIES&price=259"target="_blank"><button>Place Order</button></a>
+        </div>
+         <div class="menu-item">
+            <img class="img" src="https://thumbs.dreamstime.com/b/close-up-high-angle-shot-showcases-white-plate-filled-freshly-steamed-momos-dumplings-plump-delicate-435242405.jpg" alt="image of momos">
+            <h3>MOMOS</h3>
+            <p class="price">RS.659</p>
+            <a href="payment .html?item=MOMOS&price=659"target="_blank"><button>Place Order</button></a>
+        </div>
+    </div>
+</section>
+<section class="section-dark">
+ <div class="full">
+        <h2 id="Main-Course">Main Course</h2>
+        <h3><i>Enjoy wholesome meals crafted with authentic spices and rich flavors.</i></h3>
+    </div>
+    <div class="Course-container">
+        <div class="course-item">
+            <img class="pic" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/paneer-butter-masala-recipe.jpg" alt="image of paneer butter masala ">
+            <h3>PANEER BUTTER MASALA</h3>
+            <p class="price">RS.699</p>
+            <a href="payment .html?item=PANEER-BUTTER-MASALA&price=699"target="_blank"><button>Place Order</button></a>
+            </div>
+            <div class="course-item">
+            <img class="pic" src="https://www.foodandwine.com/thmb/8YAIANQTZnGpVWj2XgY0dYH1V4I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/spicy-chicken-curry-FT-RECIPE0321-58f84fdf7b484e7f86894203eb7834e7.jpg" alt="image of chicken curry">
+            <h3>CHICKEN CURRY</h3>
+            <p class="price">RS.499</p>
+            <a href="payment .html?item=CHICKEN-CURRY&price=499"target="_blank"><button>Place Order</button></a>
+            </div>
+            <div class="course-item">
+            <img class="pic" src="https://feastwithsafiya.com/wp-content/uploads/2021/10/Veg-Dum-Biryani.jpg" alt="image of VEG BIRYANI">
+            <h3>VEG BIRYANI</h3>
+            <p class="price">RS.259</p>
+            <a href="payment .html?item=VEG-BIRYANI&price=259"target="_blank"><button>Place Order</button></a>
+            </div>
+            <div class="course-item">
+            <img class="pic" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/hakka-noodles-recipe.jpg" alt="image of HAKKA NOODLES ">
+            <h3>HAKKA NOODLES</h3>
+            <p class="price">RS.359</p>
+            <a href="payment .html?item=HAKKA-NOODLESS&price=359"target="_blank"><button>Place Order</button></a>
+            </div>
+            <div class="course-item">
+            <img class="pic" src="https://midwestfoodieblog.com/wp-content/uploads/2023/07/chicken-alfredo-1.jpg" alt="image of PASTA ALFREDO">
+            <h3>PASTA ALFREDO</h3>
+            <p class="price">RS.759</p>
+            <a href="payment .html?item=PASTA-ALFREDO&price=759"target="_blank"><button>Place Order</button></a>
+            </div>
+            <div class="course-item">
+            <img class="pic" src="https://www.australianeggs.org.au/assets/Uploads/Egg-fried-rice-2.jpg" alt="image of FRIED RICE ">
+            <h3> FRIED RICE</h3>
+            <p class="price">RS.159</p>
+            <a href="payment .html?item=FRIED-RICE&price=159"target="_blank"><button>Place Order</button></a>
+            </div>
+            </div>
+</section>
+<section class="section-light">
+    <div class="three">
+     <h2 id="Beverages">Refreshing Beverages</h2>
+     <h3><i>Cool, energizing drinks crafted to complement your meal and refresh your mood.</i></h3>
+    </div>
+<div class="cold-container">
+    <div class="cold-item">
+        <img class="cute" src="https://lmld.org/wp-content/uploads/2022/04/Lemonade-4.jpg" alt="image of lemonade">
+        <h3>LEMONADE</h3>
+        <p class="price">RS.149</p>
+        <a href="payment .html?item=LEMONADE&price=149"target="_blank"><button>Place order</button></a>
+    </div>
+    <div class="cold-item">
+        <img class="cute" src="https://bakingmehungry.com/wp-content/uploads/2024/05/lipton-iced-tea-recipe-8.jpg" alt="image of Iced Tea">
+        <h3>ICED TEA</h3>
+        <p class="price">RS.169</p>
+        <a href="payment .html?item=ICED-TEA&price=169"target="_blank"><button>Place order</button></a>
+    </div>
+    <div class="cold-item">
+        <img class="cute" src="https://www.cookwithmanali.com/wp-content/uploads/2022/07/Iced-Mocha.jpg" alt="image of Cold Coffee">
+        <h3>COLD COFFEE</h3>
+        <p class="price">RS.139</p>
+        <a href="payment .html?item=COLD-COFFEE&price=139"target="_blank"><button>Place order</button></a>
+    </div>
+    <div class="cold-item">
+        <img class="cute" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUiVuTP47Bb1z0h4XDC2y3a9aNkfW5jyP9FQ&s" alt="image of coffee">
+        <h3>COFFEE</h3>
+        <p class="price">RS.109</p>
+        <a href="payment .html?item=COFFEE&price=109"target="_blank"><button>Place order</button></a>
+        </div>
+    <div class="cold-item">
+        <img class="cute" src="https://images.ctfassets.net/0e6jqcgsrcye/6Dnzkf1ylG7IxDRG9Ez1Ia/0db4f0be1ff6199ae89afa4a0ae26687/How_to_make_a_perfect_cappuccino_at_home.jpg" alt="image of CAPPUCCINO ">
+        <h3>CAPPUCCINO</h3>
+        <p class="price">RS.259</p>
+        <a href="payment .html?item=CAPPUCCINO&price=259"target="_blank"><button>Place order</button></a>
+    </div>
+    <div class="cold-item">
+        <img class="cute" src="https://www.foodandwine.com/thmb/VSSakyBhpjt2NWTKQUAU05eb2xM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Spiked-Peanut-Butter-Hot-Chocolate-FT-MAG-RECIPE-0225-b72b3e0d1545494aa9702eff42669656.jpg" alt="image of HOT CHOCOLATE ">
+        <h3>HOT CHOCOLATE</h3>
+        <p class="price">RS.179</p>
+        <a href="payment .html?item=HOT-CHOCOLATE&price=179"target="_blank"><button>Place order</button></a>
+    </div>
+</div>
+</section>
+<section class="section-dark">
+    <div class="half">
+        <h2 id="Desserts">Desserts & Sweet Treats</h2>
+        <h3><i>End your meal with delightful desserts crafted to bring sweetness to every moment</i></h3>
+    </div>
+    <div class="Desert-container">
+    <div class="Desert-item">
+            <img class="npr" src="https://www.lifeloveandsugar.com/wp-content/uploads/2014/08/Best-Moist-Chocolate-Cake1-1.jpg" alt="image of Choclate Cake ">
+            <h3>CHOCKLATE CAKE</h3>
+            <p class="price">RS.759</p>
+            <a href="payment .html?item=CHOCOLATE-CAKE&price=759"target="_blank"><button>Place Order</button></a>
+            </div>
+    <div class="Desert-item">
+            <img class="npr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ice_Cream_dessert_02.jpg/960px-Ice_Cream_dessert_02.jpg" alt="image of ICE-CREAM">
+            <h3>ICE-CREAM</h3>
+            <p class="price">RS.599</p>
+            <a href="payment .html?item=ICE-CREAM&price=599"target="_blank"><button>Place Order</button></a>
+            </div>
+    <div class="Desert-item">
+            <img class="npr" src="https://ichef.bbc.co.uk/ace/standard/1600/food/recipes/cupcakes_93722_16x9.jpg.webp" alt="image of CUPCAKES">
+            <h3> CUPCAKES</h3>
+            <p class="price">RS.669</p>
+            <a href="payment .html?item=CUPCAKES&price=669"target="_blank"><button>Place Order</button></a>
+            </div>
+    <div class="Desert-item">
+            <img class="npr" src="https://5.imimg.com/data5/SELLER/Default/2024/2/384944363/DN/MV/KT/144303146/gulab-jamun-desi-ghee.jpg" alt="image of GULAB JAMUN ">
+            <h3>GULAB JAMUN </h3>
+            <p class="price">RS.449</p>
+            <a href="payment .html?item=GULAB-JAMUN&price=449"target="_blank"><button>Place Order</button></a>
+            </div>
+    <div class="Desert-item">
+            <img class="npr" src="https://en.petitchef.com/imgupl/recipe/baked-donuts-the-healthy-but-delicious-version--lg-467429p745852.webp" alt="image of DONUTS ">
+            <h3>DONUTS </h3>
+            <p class="price">RS.399</p>
+            <a href="payment .html?item=DONUTS&price=399"target="_blank"><button>Place Order</button></a>
+            </div>
+    <div class="Desert-item">
+            <img class="npr" src="https://i0.wp.com/bryonysbakes.com/wp-content/uploads/2021/07/D2E892A5-3FDD-448E-A056-D5DA66C8090D.jpg?ssl=1" alt="image of BROWNIE">
+            <h3> BROWNIE </h3>
+            <p class="price">RS.359</p>
+            <a href="payment .html?item=BROWNIE&price=359"target="_blank"><button>Place Order</button></a>
+            </div>
+</div>
+</section>
+<footer>
+    <section class="section-light">
+        <div class="trick">
+            <h2 id="Contact">Contact & Reservation</h2>
+            <h3>We are here to assist you with bookings, orders, and inquiries.</h3>
+        </div>
+        <div class="connect-container">
+            <div class="connect-item">
+               <img class="charm" src="https://www.nobroker.in/locality-iq/images/Koramangala.webp" alt="image of map">
+                  <h3>📍 Location: Bangalore, India<br>🕒 Timing: 10:00 AM – 11:00 PM</h3>
+                     </div>
+                     <div class="connect-item">
+             <img class="charm" src="https://etimg.etb2bimg.com/photo/103448783.cms" alt="image of interior">
+                <h3>
+                 📞 Phone: +91 XXXXX XXXXX<br>
+                  📧 Email: info@urbanbites.com
+</h3>
+             </img>
+            </div>
+        </div>
+    </section>
+        <section class="section-gray">
+     <div class="last-container">
+        <div class="last">
+        <p><i>Urban Bites is dedicated to providing delicious meals made with fresh ingredients and authentic flavors. We focus on quality, hygiene, and excellent customer service to create memorable dining experiences.</i></p>
+        </div>
+        <div class="last">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Fast-Food">Fast-Food</a>
+                <a href="#Main-Course">Main-Course</a>
+                <a href="#Beverages">Beverages</a>
+                <a href="#Desserts">Desserts</a>
+                <a href="#Contact">Contact</a>
+        </div>
+        <div class="last">
+            <p>📍 Location: Bangalore, India<br>
+               📞 Phone: +91 XXXXX XXXXX<br>
+               📧 Email: info@urbanbites.com</p>
+        </div>
+        </div>
+     <div><p>&copy; 2026 Urban Bites| 
+                   Designed by Satyam Kumar Jha  
+                 All Rights Reserved</p></div>
+        </section>
+    </footer>
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</body>
+</html>

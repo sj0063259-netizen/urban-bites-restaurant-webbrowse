@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restauant Website</title>
+</head>
+<style>
+    .cafe-container{
+background-color: #fff7ed;
+border-radius: 4px;
+display: flex;
+flex-wrap: wrap;
+  justify-content: space-between;
+align-items: center;
+padding: 40px;
+min-height: 70vh;
+ transition: transform 0.3s ease;
+}
+    .cafe{
+        color: #1f2937;
+        box-sizing: initial;
+        text-align: left;
+        text-decoration: #0f3d2e;
+        gap:10px;
+    }
+    .cafe img{
+         width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .about-container{
+        max-width: 1100px;
+        margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap;
+}
+    .about-text { flex: 1;
+        min-width: 280px;
+    }
+.about-text h2{
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+.about-text p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+.about-img{
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+.about-img img{
+width: 100%;
+max-width: 420px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+    
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        background-color: white;
+        max-width: 1100px;
+    margin: auto;
+    }
+    .header{
+        width: 400px;
+        text-align: center;
+        color: #1f2937;
+        accent-color: #f59e0b;
+        background-color: white;
+    }
+    .header img{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    button{
+        background-color:#b91c1c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #991b1b;
+    }
+    .section-light{
+        background:#fff7ed;
+    padding:60px 20px;
+    }
+    .section-dark{
+        background-color: #f3f4f6;
+        padding:60px 20px;
+
+    }
+h1{
+    color: #1f2937;
+}
+.delicious{
+    color: #b91c1c;
+}
+.Flavour{
+    color: #374151;
+}
+.ingredient{
+    color: #6b7280;
+}
+.menu-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+.img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;}
+    .price{
+        color: #b91c1c;
+    }
+    .paragraph-container{
+        line-height: 1.6;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .paragraph-container p{
+        margin-top: 10px;
+        line-height: 1.6;
+        color: #6b7280;
+        max-width: 1100px;
+    margin: auto;
+    }
+    .menu-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.menu-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+.why-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+ gap: 20px;
+}
+.pic{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.why{
+    background: white;
+     padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.why:hover {
+    transform: translateY(-5px);
+}
+.msg{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.msg h2{
+color: #1f2937;
+}
+.msg article{
+    color: #374151;
+}
+.msg p{
+    color: #6b7280;
+} 
+.connect-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+    .connect-item{
+         background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+    }
+    .connect-item b{
+    display:block;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.connect-item:hover {
+    transform: translateY(-5px);}
+    .charm{ width: 100%;
+    height: 250px;
+    object-fit: cover;}
+    .trick{
+        text-align:center;
+    }
+    .trick h2{
+        color: #0f172a;
+        font-size: 24px;
+    }
+    .trick h3{
+        color: #6b7280;
+        font-size: 20px;
+    }
+.last-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+}
+.last{padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    line-height: 1.6;
+}
+.last a{
+    display: block;
+    color: #e5e7eb;
+    text-decoration: none;
+    margin: 8px 0;
+}
+.last a:hover{
+    color:#f59e0b
+}
+.section-gray{
+    background-color: #0f172a;
+    color: #e5e7eb;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+.special-containter{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+     gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+ .special-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.special-item h3{
+    display:block;
+    margin: 10px;
+    font-size: 24px;
+}
+.graph{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.special-item:hover {
+    transform: translateY(-5px);}
+    .offer{
+        text-align: center;
+    }
+    .offer h2{
+        color: #1f2937;
+        font-size: 24px;
+    }
+.offer h3{
+    color: #6b7280;
+    font-size: 18px;
+}
+ nav {
+    background-color: #1f2937;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f59e0b;
+    color: #1f2937;
+}
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+/*========MOBILE RESPONSIVE========*/
+@media (max-width: 900px){
+    .cafe-container{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .about-container{
+        flex-direction: column;
+     text-align: center;
+    }
+    .menu-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .why-container{
+        grid-template-columns: 1fr;
+    }
+    .last-container{
+        grid-template-columns: 1fr;
+    }
+    .header{
+        width: 100%;
+    }
+    .special-containter{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px){
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav a {
+        flex: 1 1 auto;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .menu-container{
+        grid-template-columns: 1fr;
+    }
+
+    .special-containter{
+        grid-template-columns: 1fr;
+    }
+
+    .cafe img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu-item{
+        padding: 15px;
+    }
+
+    .img{
+        height: 180px;
+    }
+
+    .paragraph-container p{
+        line-height: 1.6;
+    }
+
+}
+@media (max-width: 768px){
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1f2937;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 15px;
+        border-radius: 0 0 0 10px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+</style>
+<body>
+    <nav>
+    <div class="logo">Urban Bites</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Menu">Menu</a>
+        <a href="#pixel">Offers</a>
+        <a href="#Reason">Reason</a>
+        <a href="#Contact">Contact</a>
+    </div>
+</nav>
+    <section id="logo">
+        <div class="cafe-container">
+<section class="cafe">
+    <h1 id="Home"> Urban Bites</h1>
+    <h2 class="delicious">Delicious Food, Delivered Fresh</h2>
+    <p class="Flavour">Experience authentic flavors, premium ingredients, and a warm dining atmosphere designed to make every meal memorable.</p>
+    <p class="ingredient"><b>Fresh Ingredients • Expert Chefs • Fast Service</b></p>
+    <a href="menu.html" target="_blank"><button>View Menu</button></a>
+    <a href="table.html"target="_blank"><button>Book Table</button></a>
+        </section>
+        <section class="cafe">
+            <img src="Rlogo.jpeg"alt="logo of Urban Bites">
+    </section>
+    </div>
+    </section>
+    <section class="section-light">
+    <div class="header-container">
+        <section class="header">
+          <h3>Restaurant interior</h3>  
+            <img src="rest1.jpg" alt="image of restaurant">
+        </section>
+        <section class="header">
+            <h3>Dining</h3>
+        <img src="https://plus.unsplash.com/premium_photo-1723120606308-698e1b1eb959?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image of fine dining">
+    </section>
+    </div>
+    </section>
+    <section class="section-dark">
+        <div class="about-container">
+            <div class="about-text">
+                 <h2 id="About">About Urban Bites</h2>
+        <p><i>Urban Bites is a modern dining destination dedicated to delivering exceptional flavors and memorable culinary experiences. Our chefs combine fresh ingredients with creative recipes to craft dishes that satisfy every taste. Whether you are enjoying a casual meal with family or celebrating a special occasion, our restaurant provides a welcoming atmosphere and outstanding service.</i></p>
+        <p><i>We believe that great food starts with quality ingredients. That is why we carefully select fresh produce, premium spices, and authentic cooking techniques to ensure every dish meets the highest standards. At Urban Bites, customer satisfaction and food quality are always our top priorities.</i></p>
+            </div>
+    <div class="about-img">
+        <h3> Prepration of food:</h3>
+        <img src="https://www.shutterstock.com/image-photo/team-restaurant-chefs-collaborating-commercial-260nw-2723216705.jpg" alt="image">
+        </div>
+    </section>
+    <section class="section-light">
+        <div class="paragraph-container">
+            <h2 id="Menu">Our Popular Menu</h2>
+            <p><i>Handcrafted dishes prepared with fresh ingridients and authentic flavours</i></p>
+        </div>
+        <div class="menu-container">
+<div class="menu-item">
+    <img class="img" src="https://ooni.com/cdn/shop/articles/20220211142347-margherita-9920_ba86be55-674e-4f35-8094-2067ab41a671.jpg?v=1737104576" alt="image of PIZZA">
+    <b>PIZZA</b>
+    <article class="price">RS.399</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+<div class="menu-item">
+    <img class="img" src="https://www.foodandwine.com/thmb/XE8ubzwObCIgMw7qJ9CsqUZocNM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSG-Smash-Burger-FT-RECIPE0124-d9682401f3554ef683e24311abdf342b.jpg" alt="image of burger">
+    <b>BURGER</b>
+    <article class="price">RS.199</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+<div class="menu-item">
+    <img class="img" src="https://static.vecteezy.com/system/resources/thumbnails/036/290/866/small/ai-generated-french-fries-with-dipping-sauce-on-a-transparent-background-ai-png.png" alt="image of FRENCH-FRIES">
+    <b>FRENCH FRIES</b>
+    <article class="price">RS.259</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+<div class="menu-item">
+    <img class="img" src="https://yujinizakaya.com.sg/wp-content/uploads/2025/06/japanese-nigiri-sushi-recipe-1749130962.jpg" alt="image of SUSHI">
+    <b>SUSHI</b>
+    <article class="price">RS.499</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+<div class="menu-item">
+    <img class="img" src="https://myfoodstory.com/wp-content/uploads/2021/10/Veg-Manchurian-FI-1.jpg">
+    <b>MANCHURIAN</b>
+    <article class="price">RS.99</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+<div class="menu-item"><img class="img" src="https://tarasmulticulturaltable.com/wp-content/uploads/2019/07/Meat-Filled-Momos-9-of-10.jpg" alt="image of MOMOS">
+    <b>MOMOS</b>
+    <article class="price">RS.659</article>
+    <a href="menu.html"target="_blank"><button>Place Order</button></a>
+</div>
+    </section>
+    <section class="section-dark">
+        <div class="offer">
+            <h2 id="pixel">Special Offers & Deals</h2>
+            <h3><i>Enjoy exclusive discounts and delicious combos crafted to give you more test at the best value.</i></h3>
+        </div>
+        <div class="special-containter">
+            <div class="special-item">
+                <img class="graph" src="https://t4.ftcdn.net/jpg/17/22/81/79/360_F_1722817932_rLEUjzluWmH5EKEQ1YQCZkHBDYYQhMgw.jpg" alt="image of combo meal">
+                <h3>Family Combo</h3>
+                <p class="price">2 Pizzas+2 Burgers+ Fries+ Drinks only<br>RS.999</p>
+                <a href="menu.html"target="_blank"><button>Order Now</button></a>
+            </div>
+            <div class="special-item">
+                <img class="graph" src="https://assets.simplotel.com/simplotel/image/upload/x_0,y_0,w_1080,h_1080,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/hotel-le-grande---mumbai-international-airport/Hotel_Le_Grande_Mumbai_Social_Media_Post_Alacarte_20_Discount_Jan_25_26bb09bb" alt="weekend offer">
+                <h3>Weekend Special Deal</h3>
+                <p class="price">Flat 20% Off on All Orders<br>Saturday&Sunday only</p>
+                 <a href="menu.html"target="_blank"><button>Grab Offer</button></a>
+            </div>
+            <div class="special-item">
+                <img class="graph" src="https://hips.hearstapps.com/hmg-prod/images/raspberry-and-pistachio-semifreddo-jpg-1589489725.jpg?crop=0.785xw:0.524xh;0,0.171xh&resize=640:*" alt="image of dessert">
+                <h3>Sweet Treat Offer</h3>
+                <p class="price">Buy 1 Dessert Get 1 Free<br>Limited Time Only</p>
+                 <a href="menu.html"target="_blank"><button>View Deal</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="section-light">
+    <div class="msg">
+    <h2 id="Reason">Why choose Urban Bites</h2>
+    <article><b>We are comitted to deliviring quality food and exceptional dining expriences.</b></article> 
+    <p><i>Urban Bites stands out as a dining destination because of our dedication to quality, taste, and customer satisfaction. Every dish is prepared using fresh ingredients and carefully selected spices to ensure authentic flavors and consistent quality. Our chefs focus on maintaining hygiene standards and modern cooking techniques to provide a safe and enjoyable dining experience</i></p> 
+   <p><i>We aim to provide fast service without compromising food quality. Whether dining in or ordering online, customers receive the same level of attention and care. Our welcoming environment, friendly staff, and passion for food make every visit memorable.</i></p>
+   </div>
+   <div class="why-container">
+    <div class="why">
+        <img class="pic" src="https://media.istockphoto.com/id/1155240408/photo/table-filled-with-large-variety-of-food.jpg?s=612x612&w=0&k=20&c=uJEbKmR3wOxwdhQR_36as5WeP6_HDqfU-QmAq63OVEE=" alt="image of fresh ingredients">
+        <h3>Fresh ingredients</h3>
+        <p>We use high-quality, fresh ingredients to maintain taste and nutrition.</p>
+         <a href="menu.html"target="_blank"><button>View details</button></a>
+    </div>
+    <div class="why">
+        <img class="pic" src="https://www.todaystraveller.net/wp-content/uploads/2022/10/Chefs-judging-the-culinary-competition-1024x731.jpg" alt="image of Experts">
+        <h3>Expert Chefs</h3>
+        <p>Our experienced chefs prepare dishes with creativity and precision.</p>
+         <a href="menu.html"target="_blank"><button>View details</button></a>
+    </div>
+    <div class="why">
+        <img class="pic" src="https://pudumjeehygiene.com/wp-content/uploads/2025/03/Best-Practices-for-Kitchen-Hygiene-How-to-Maintain-a-Safe-Germ-Free-Space.jpg" alt="image of hygeine kitchen">
+        <h3>Hygeine Kitchen</h3>
+        <p>Clean and safe cooking environment following proper standards.</p>
+         <a href="menu.html"target="_blank"><button>View details</button></a>
+    </div>
+    <div class="why">
+        <img class="pic" src="https://www.restroworks.com/blog/wp-content/uploads/2025/09/Quick-Service-Restaurant-Dining-Experience.webp" alt="image  of service">
+        <h3>Fast Service</h3>
+        <p>Quick preparation and timely delivery ensure customer satisfaction.</p>
+         <a href="index.html"target="_blank"><button>View details</button></a>
+    </div>
+</section>
+    <footer>
+    <section class="section-dark">
+        <div class="trick">
+            <h2 id="Contact">Contact & Reservation</h2>
+            <h3>We are here to assist you with bookings, orders, and inquiries.</h3>
+        </div>
+        <div class="connect-container">
+            <div class="connect-item">
+               <img class="charm" src="https://www.nobroker.in/locality-iq/images/Koramangala.webp" alt="image of map"><img>
+                  <h3>📍 Location: Bangalore, India<br>🕒 Timing: 10:00 AM – 11:00 PM</h3>
+                     </div>
+                     <div class="connect-item">
+             <img class="charm" src="https://etimg.etb2bimg.com/photo/103448783.cms" alt="image of interior">
+                <h3>
+                 📞 Phone: +91 XXXXX XXXXX<br>
+                  📧 Email: info@urbanbites.com
+</h3>
+             </img>
+            </div>
+        </div>
+    </section>
+        <section class="section-gray">
+     <div class="last-container">
+        <div class="last">
+        <p><i>Urban Bites is dedicated to providing delicious meals made with fresh ingredients and authentic flavors. We focus on quality, hygiene, and excellent customer service to create memorable dining experiences.</i></p>
+        </div>
+        <div class="last">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Menu">Menu</a>
+                <a href="#pixel">Offer</a>
+                <a href="#Reason">Reason</a>
+                <a href="#Contact">Contact</a>
+        </div>
+        <div class="last">
+            <p>📍 Location: Bangalore, India<br>
+               📞 Phone: +91 XXXXX XXXXX<br>
+               📧 Email: info@urbanbites.com</p>
+        </div>
+        </div>
+     <div><p>&copy; 2026 Urban Bites| 
+                   Designed by Satyam Kumar Jha  
+                 All Rights Reserved</p></div>
+        </section>
+    </footer>
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</body>
+</html>
