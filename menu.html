@@ -317,52 +317,52 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         color: #6b7280;
         font-size: 20px;
     }
-    nav {
+    
+.navbar {
     background-color: #1f2937;
     padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* Top row */
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
 .logo {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
+}
+
+/* Toggle */
+.menu-toggle {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: none;
 }
 
 /* Links */
 .nav-links {
     display: flex;
     gap: 25px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
     padding: 8px 14px;
-    border-radius: 6px;
-    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    background-color: #f59e0b;
-    color: #1f2937;
-}
-
-/* Toggle button */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-}
-
-/* MOBILE */
+/* Mobile */
 @media (max-width: 768px) {
 
     .menu-toggle {
@@ -373,11 +373,8 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         display: none;
         flex-direction: column;
         background: #1f2937;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
         padding: 15px;
+        margin-top: 10px;
         border-radius: 8px;
     }
 
@@ -472,6 +469,24 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 
 </style>
 <body>
+    <nav class="navbar">
+
+    <div class="nav-top">
+        <div class="logo">Urban Bites</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+               <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Fast-Food">Fast-Food</a>
+                <a href="#Main-Course">Main-Course</a>
+                <a href="#Beverages">Beverages</a>
+                <a href="#Desserts">Desserts</a>
+                <a href="#Contact">Contact</a>       
+    </div>
+</nav>
      <nav>
     <div class="logo">Urban Bites</div>
 
