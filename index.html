@@ -318,6 +318,7 @@ color: #1f2937;
     font-weight: bold;
 }
 
+/* Links */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -327,7 +328,7 @@ color: #1f2937;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 6px;
     transition: 0.3s;
 }
@@ -337,12 +338,36 @@ color: #1f2937;
     color: #1f2937;
 }
 
-/* Hamburger button */
+/* Toggle button */
 .menu-toggle {
     display: none;
     font-size: 26px;
     color: white;
     cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1f2937;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
 }
 /*========MOBILE RESPONSIVE========*/
 @media (max-width: 900px){
@@ -412,39 +437,15 @@ color: #1f2937;
     }
 
 }
-@media (max-width: 768px){
 
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #1f2937;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 15px;
-        border-radius: 0 0 0 10px;
-    }
-
-    .nav-links a {
-        padding: 10px;
-        text-align: left;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-}
 </style>
 <body>
     <nav>
     <div class="logo">Urban Bites</div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
 
     <div class="nav-links" id="navLinks">
         <a href="#Home">Home</a>
@@ -644,5 +645,6 @@ color: #1f2937;
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("show");
 }
+</script>
 </body>
 </html>
